@@ -57,13 +57,14 @@ def print_standings(team_stats: Dict[str, TeamStats]) -> None:
     
     # Print the table header
     print("{:<30} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10}".format(
-        "Team", "GS", "GA", "W", "T", "L", "GD", "Pts"
+        "Team", "W", "T", "L", "GS", "GA", "GD", "Pts"
     ))
     print("-" * 120)
     
     # Print the stats for each team
     for team, stats in sorted_teams:
         print("{:<30} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10}".format(
-            team, stats.goals_scored, stats.goals_against, stats.matches_won, stats.matches_tied,
-            stats.matches_lost, stats.goal_difference, stats.points
+            team, stats.matches_won, stats.matches_tied, stats.matches_lost, 
+            stats.goals_scored, stats.goals_against,stats.goal_difference, 
+            stats.points
         ))
